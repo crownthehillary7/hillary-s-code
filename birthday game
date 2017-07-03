@@ -1,0 +1,36 @@
+/**Copyright (c) Hillary Chatter 2017
+All Rights Reserved
+Use of this code is strictly prohibited without use of the above copyright claim 
+*/
+
+import java.util.Scanner;
+
+public class BirthdayGame {
+  public static void main (String[] args) {
+      System.out.println("Please enter your birth month...");
+      
+      Scanner monthScanner = new Scanner(System.in);
+      double month = monthScanner.nextInt();
+      
+      double int1 = month*5;
+      double int2 = int1+6;
+      double int3 = int2*4;
+      double int4 = int3+9;
+      double int5 = int4*5;
+      double int7 = int5+month;
+      
+      System.out.println("Please enter the day of your birth...");
+      Scanner dayScanner = new Scanner(System.in);
+      double day = dayScanner.nextInt();
+      
+      double int6 = int5+day;
+      double birthday = int6-165;
+
+      double birthday2 = birthday/100;
+      System.out.print("Your birthday is on ");
+      System.out.println(birthday2);		// Fixed rounding issue
+      System.out.print("Your score is ");
+      System.out.println(int7);	
+      
+  }
+}
