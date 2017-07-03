@@ -1,0 +1,164 @@
+*/
+
+import java.util.Scanner;
+
+public class Test { public static void main(String[] args) {
+
+	System.out.println("Type 1 to go first and 0 to go second");
+	Scanner firstScanner = new Scanner(System.in);
+	int first = firstScanner.nextInt();
+
+	if (first ==0){
+
+		int numChoc = 13;
+		System.out.println("I take 1 chocolate");
+		numChoc = numChoc -1;
+
+		while (numChoc > -1) {
+
+			int chocChange=0;
+			System.out.println("There are " +numChoc+ " Chocolates left");
+			System.out.println("Please pick a number between 1 and 3");
+			Scanner chocScanner = new Scanner(System.in);
+			int userPick = chocScanner.nextInt();
+
+
+			if (userPick ==1) {
+				System.out.println("I pick 3 Chocolates");
+				chocChange = userPickOne(userPick);
+			}
+			else if (userPick ==2) {
+				System.out.println("I pick 2 Chocolates");
+				chocChange = userPickTwo(userPick);
+			}
+			else if (userPick ==3) {
+				System.out.println("I pick 1 Chocolates");
+				chocChange = userPickThree(userPick);
+			}
+
+			numChoc = numChoc - chocChange;
+			if (numChoc==0){
+				System.out.println("You lose");
+				System.exit(1);
+			}
+		}
+	}
+
+	else {
+		int numChoc = 13;
+		int counter = 0;
+		while (numChoc > -1) {
+			
+			System.out.println("There are " +numChoc+ " Chocolates left");
+			System.out.println("How many chocolates do you pick?");
+			Scanner chocScanner = new Scanner(System.in);
+			int userChocPick = chocScanner.nextInt();
+			int chocolateChange =0;
+			
+			
+			
+
+			if(userChocPick == 2 && counter < 1) {
+
+
+				counter = counter+1;
+				System.out.println("I pick 3");
+				chocolateChange = getIntoAlgorithmTwo(userChocPick);
+			}
+			else if(userChocPick == 3 && counter< 1){
+
+				counter = counter+1;
+				System.out.println("I pick 2");
+				chocolateChange = getIntoAlgorithmThree(userChocPick);
+			}
+
+			else if(userChocPick == 1 && counter < 1) {
+
+				counter = counter +1;
+				System.out.println("I pick 2");
+				chocolateChange = getIntoAlgorithmOne(userChocPick);
+			}
+
+			else if(userChocPick == 1 && counter >= 1){
+
+				System.out.println("I pick 3 Chocolates");
+				chocolateChange = userPickOne1(userChocPick);
+			}
+			
+			else if(userChocPick == 2 && counter >= 1){
+
+				System.out.println("I pick 2 Chocolates");
+				chocolateChange = userPickTwo1(userChocPick);
+			}
+			
+			else if(userChocPick == 3 && counter >= 1){
+
+				System.out.println("I pick 1 Chocolates");
+				chocolateChange = userPickThree1(userChocPick);
+			}
+			
+			
+			numChoc = numChoc - chocolateChange;
+			if (numChoc==0){
+				System.out.println("You lose");
+				System.exit(1);
+			}
+		}
+	}
+}
+
+
+public static int userPickOne(int userPick){
+
+	int changeInChocolates = userPick + 3;
+	return changeInChocolates;
+}
+
+public static int userPickTwo(int userPick){
+
+	int changeInChocolates = userPick + 2;
+	return changeInChocolates;
+}
+
+public static int userPickThree(int userPick){
+
+	int changeInChocolates = userPick + 1;
+	return changeInChocolates;
+}
+
+public static int getIntoAlgorithmTwo(int userChocPick){
+
+	int changeInChocolates = userChocPick + 3;
+	return changeInChocolates;
+}
+
+public static int getIntoAlgorithmThree(int userChocPick){
+
+	int changeInChocolates = userChocPick + 2;
+	return changeInChocolates;
+}
+
+public static int getIntoAlgorithmOne(int userChocPick){
+
+	int changeInChocolates = userChocPick + 2;
+	return changeInChocolates;
+}
+
+public static int userPickOne1(int userChocPick){
+
+	int changeInChocolates = userChocPick + 3;
+	return changeInChocolates;
+}
+
+public static int userPickTwo1(int userChocPick){
+
+	int changeInChocolates = userChocPick + 2;
+	return changeInChocolates;
+}
+
+public static int userPickThree1(int userChocPick){
+
+	int changeInChocolates = userChocPick + 1;
+	return changeInChocolates;
+}
+}
