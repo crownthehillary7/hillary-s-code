@@ -1,0 +1,104 @@
+import java.awt.*;
+import java.io.*;
+import java.util.*;
+
+public class CelebName {
+
+
+
+	public static void main (String[] args) {
+
+
+
+		//Variable declaration
+
+		String nameOne = ("Allan Alda");
+		String nameTwo = ("John Wayne");
+		String nameThree = ("Gregory Peck");
+
+		//Welcome
+		System.out.println ("**********************************************");
+		System.out.println ("Welcome to Hillary's program!");
+		System.out.println ("**********************************************");
+		System.out.println ("");
+
+		// Input
+		String halfOne = nameOne.substring(2,7);
+		String halfTwo = nameTwo.substring(2,7);
+		String halfThree = nameThree.substring(2,9);
+
+		System.out.println("Please guess which names belong to the followng celebrity");
+
+		System.out.println(halfOne);
+		System.out.println(halfTwo);
+		System.out.println(halfThree);
+
+		System.out.println("What is name 1?");
+
+		Scanner oneScanner = new Scanner(System.in);
+		String oneGuess = oneScanner.nextLine();
+
+
+		System.out.println("What is name 2?");
+
+		Scanner twoScanner = new Scanner(System.in);
+		String twoGuess = twoScanner.nextLine();
+
+		System.out.println("What is name 3?");
+
+		Scanner threeScanner = new Scanner(System.in);
+		String threeGuess = threeScanner.nextLine();
+
+		boolean nameOneCor;
+		boolean nameTwoCor;
+		boolean nameThreeCor;
+
+		
+
+
+			if (oneGuess .equals(nameOne)) {
+				System.out.println("Name One is Correct!");
+				nameOneCor = true;
+			}
+			else { 
+				System.out.println("Name One is Incorrect");
+				nameOneCor = false;
+			}
+
+			if (twoGuess .equals(nameTwo)) {
+				System.out.println("Name Two is Correct!");
+				nameTwoCor = true;
+			}
+			else { 
+				System.out.println("Name Two is Incorrect");
+				nameTwoCor = false;
+			}
+
+			if (threeGuess .equals(nameThree)) {
+				System.out.println("Name Three is Correct!");
+				nameThreeCor = true;
+			}
+			else { 
+				System.out.println("Name Three is Incorrect");
+				nameThreeCor = false;
+			}
+		
+		while(nameOneCor && nameTwoCor && nameThreeCor == true);
+
+
+
+		//Processing
+
+
+		//Output
+
+
+		//Goodbye
+		System.out.println ("");
+		System.out.println ("*******************************************************");
+		System.out.println ("Thank you for using Hillary's Temperature Converter!");
+		System.out.println ("*******************************************************");
+
+
+	} 
+} 
